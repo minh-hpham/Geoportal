@@ -30,7 +30,6 @@ app.set('port', process.env.PORT || 3000);
 // this will set your apps view folder to something like /minhp/GoogleMapAPI/views
 app.set('views', path.join(__dirname, 'views'));
 
-app.set('view engine', 'jade');
 // gives your app the ability to parse JSON. 
 // This is necessary for when you're sending data in JSON format. 
 app.use(bodyParser.json());
@@ -94,7 +93,7 @@ app.use(function (err, req, res, next) {
 });*/
 
 app.get("/", function (req, res) {
-    res.render('map.html')
+    res.sendFile(path.join(__dirname + 'views/map.html'));
 });
 
 
